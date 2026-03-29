@@ -15,6 +15,7 @@ async function bootstrap() {
     .setVersion('1.0')
     .addTag('auth', 'Public account endpoints')
     .addTag('users', 'Authenticated user data')
+    .addTag('wedding', 'Wedding resources')
     .addBearerAuth(
       { type: 'http', scheme: 'bearer', bearerFormat: 'JWT', description: 'Clerk session token' },
       'clerk',

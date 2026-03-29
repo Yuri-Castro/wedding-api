@@ -384,7 +384,9 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 
 export const ModelName = {
-  User: 'User'
+  User: 'User',
+  Wedding: 'Wedding',
+  WeddingParticipant: 'WeddingParticipant'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -400,7 +402,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user"
+    modelProps: "user" | "wedding" | "weddingParticipant"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -478,6 +480,154 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    Wedding: {
+      payload: Prisma.$WeddingPayload<ExtArgs>
+      fields: Prisma.WeddingFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.WeddingFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WeddingPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.WeddingFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WeddingPayload>
+        }
+        findFirst: {
+          args: Prisma.WeddingFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WeddingPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.WeddingFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WeddingPayload>
+        }
+        findMany: {
+          args: Prisma.WeddingFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WeddingPayload>[]
+        }
+        create: {
+          args: Prisma.WeddingCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WeddingPayload>
+        }
+        createMany: {
+          args: Prisma.WeddingCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.WeddingCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WeddingPayload>[]
+        }
+        delete: {
+          args: Prisma.WeddingDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WeddingPayload>
+        }
+        update: {
+          args: Prisma.WeddingUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WeddingPayload>
+        }
+        deleteMany: {
+          args: Prisma.WeddingDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.WeddingUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.WeddingUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WeddingPayload>[]
+        }
+        upsert: {
+          args: Prisma.WeddingUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WeddingPayload>
+        }
+        aggregate: {
+          args: Prisma.WeddingAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateWedding>
+        }
+        groupBy: {
+          args: Prisma.WeddingGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.WeddingGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.WeddingCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.WeddingCountAggregateOutputType> | number
+        }
+      }
+    }
+    WeddingParticipant: {
+      payload: Prisma.$WeddingParticipantPayload<ExtArgs>
+      fields: Prisma.WeddingParticipantFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.WeddingParticipantFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WeddingParticipantPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.WeddingParticipantFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WeddingParticipantPayload>
+        }
+        findFirst: {
+          args: Prisma.WeddingParticipantFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WeddingParticipantPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.WeddingParticipantFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WeddingParticipantPayload>
+        }
+        findMany: {
+          args: Prisma.WeddingParticipantFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WeddingParticipantPayload>[]
+        }
+        create: {
+          args: Prisma.WeddingParticipantCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WeddingParticipantPayload>
+        }
+        createMany: {
+          args: Prisma.WeddingParticipantCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.WeddingParticipantCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WeddingParticipantPayload>[]
+        }
+        delete: {
+          args: Prisma.WeddingParticipantDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WeddingParticipantPayload>
+        }
+        update: {
+          args: Prisma.WeddingParticipantUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WeddingParticipantPayload>
+        }
+        deleteMany: {
+          args: Prisma.WeddingParticipantDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.WeddingParticipantUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.WeddingParticipantUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WeddingParticipantPayload>[]
+        }
+        upsert: {
+          args: Prisma.WeddingParticipantUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WeddingParticipantPayload>
+        }
+        aggregate: {
+          args: Prisma.WeddingParticipantAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateWeddingParticipant>
+        }
+        groupBy: {
+          args: Prisma.WeddingParticipantGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.WeddingParticipantGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.WeddingParticipantCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.WeddingParticipantCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -524,6 +674,35 @@ export const UserScalarFieldEnum = {
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
 
 
+export const WeddingScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  date: 'date',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  guest_count: 'guest_count',
+  currency: 'currency',
+  status: 'status',
+  isPlannerManaged: 'isPlannerManaged'
+} as const
+
+export type WeddingScalarFieldEnum = (typeof WeddingScalarFieldEnum)[keyof typeof WeddingScalarFieldEnum]
+
+
+export const WeddingParticipantScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  weddingId: 'weddingId',
+  name: 'name',
+  email: 'email',
+  phone: 'phone',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type WeddingParticipantScalarFieldEnum = (typeof WeddingParticipantScalarFieldEnum)[keyof typeof WeddingParticipantScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -557,6 +736,27 @@ export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'In
  * Reference to a field of type 'String'
  */
 export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String'>
+    
+
+
+/**
+ * Reference to a field of type 'DateTime'
+ */
+export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
+    
+
+
+/**
+ * Reference to a field of type 'WeddingStatus'
+ */
+export type EnumWeddingStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'WeddingStatus'>
+    
+
+
+/**
+ * Reference to a field of type 'Boolean'
+ */
+export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
     
 
 
@@ -662,6 +862,8 @@ export type PrismaClientOptions = ({
 }
 export type GlobalOmitConfig = {
   user?: Prisma.UserOmit
+  wedding?: Prisma.WeddingOmit
+  weddingParticipant?: Prisma.WeddingParticipantOmit
 }
 
 /* Types for Logging */

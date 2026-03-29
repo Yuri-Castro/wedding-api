@@ -51,7 +51,9 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-  User: 'User'
+  User: 'User',
+  Wedding: 'Wedding',
+  WeddingParticipant: 'WeddingParticipant'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -75,6 +77,35 @@ export const UserScalarFieldEnum = {
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
+
+
+export const WeddingScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  date: 'date',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  guest_count: 'guest_count',
+  currency: 'currency',
+  status: 'status',
+  isPlannerManaged: 'isPlannerManaged'
+} as const
+
+export type WeddingScalarFieldEnum = (typeof WeddingScalarFieldEnum)[keyof typeof WeddingScalarFieldEnum]
+
+
+export const WeddingParticipantScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  weddingId: 'weddingId',
+  name: 'name',
+  email: 'email',
+  phone: 'phone',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type WeddingParticipantScalarFieldEnum = (typeof WeddingParticipantScalarFieldEnum)[keyof typeof WeddingParticipantScalarFieldEnum]
 
 
 export const SortOrder = {

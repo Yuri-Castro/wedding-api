@@ -34,6 +34,9 @@
       "ts"
     ],
     "rootDir": "src",
+    "moduleNameMapper": {
+      "^prisma/generated/(.*)$": "<rootDir>/../prisma/generated/$1"
+    },
     "testEnvironment": "node",
     "testRegex": ".*\\.spec\\.ts$",
     "transform": {
